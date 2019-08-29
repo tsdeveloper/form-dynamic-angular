@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { QuestionService } from './_service/question/question.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'form-dynamic';
+  questions: any[];
+
+  constructor(service: QuestionService) {
+    this.questions = service.getQuestions();
+    
+  }
 }
